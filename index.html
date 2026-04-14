@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ideal Caterers | A Legacy of Taste</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: { primary: '#D4AF37', secondary: '#050505', dark: '#0a0a0a', light: '#FAFAFA', accent: '#8B2E16' },
+fontFamily: { heading: ['Playfair Display', 'serif'], body: ['Inter', 'sans-serif'] },
+letterSpacing: { widest: '.25em' }
+}
+}
+}
+</script>
+<style>
+body { font-family: 'Inter', sans-serif; background-color: #050505; color: #FAFAFA; overflow-x: hidden; }
+.animate-on-scroll { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+.animate-on-scroll.visible { opacity: 1; transform: translateY(0); }
+.diamond-divider { display: flex; align-items: center; justify-content: center; gap: 1rem; margin: 1.5rem 0; }
+.diamond-divider::before, .diamond-divider::after { content: ''; height: 1px; width: 40px; background: rgba(212, 175, 55, 0.4); }
+@media (min-width: 768px) { .diamond-divider::before, .diamond-divider::after { width: 80px; } }
+.diamond { width: 6px; height: 6px; background: #D4AF37; transform: rotate(45deg); }
+.input-elegant { background: transparent; border: none; border-bottom: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease; color: #fff; border-radius: 0; }
+.input-elegant:focus { outline: none; border-bottom-color: #D4AF37; box-shadow: none; }
+.input-elegant::placeholder { color: rgba(255,255,255,0.4); }
+.btn-gold { border: 1px solid #D4AF37; color: #D4AF37; position: relative; overflow: hidden; transition: all 0.4s ease; z-index: 1; display: inline-flex; align-items: center; justify-content: center; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.75rem; font-weight: 600; }
+.btn-gold::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #D4AF37; z-index: -1; transform: scaleX(0); transform-origin: right; transition: transform 0.4s ease; }
+.btn-gold:hover::before { transform: scaleX(1); transform-origin: left; }
+.btn-gold:hover { color: #050505; }
+.bg-radial-dark { background: radial-gradient(circle at center, #111 0%, #050505 100%); }
+.glass-panel { background: rgba(10,10,10,0.6); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.05); }
+</style>
+</head>
+<body class="antialiased selection:bg-primary selection:text-secondary">
+
+<header class="fixed w-full top-0 z-50 glass-panel transition-all duration-300" id="navbar">
+<div class="max-w-7xl mx-auto px-4 md:px-8 py-4 flex justify-between items-center">
+<a href="#" class="text-2xl md:text-3xl font-bold text-light font-heading tracking-wide">Ideal<span class="text-primary italic font-light">Caterers</span></a>
+<nav class="hidden lg:flex items-center space-x-8 text-xs tracking-widest uppercase text-light/80">
+<a href="#about" class="hover:text-primary transition-colors">About</a>
+<a href="#services" class="hover:text-primary transition-colors">Services</a>
+<a href="#gallery" class="hover:text-primary transition-colors">Gallery</a>
+<a href="#testimonials" class="hover:text-primary transition-colors">Testimonials</a>
+</nav>
+<a href="#contact" class="hidden lg:inline-flex btn-gold px-6 py-2.5">Get a Quote</a>
+<button id="menu-toggle-btn" class="lg:hidden text-primary hover:text-light transition-colors p-2"><i data-lucide="menu" class="w-6 h-6"></i></button>
+</div>
+<div id="mobile-menu" class="hidden lg:hidden bg-secondary border-b border-primary/20 absolute w-full shadow-2xl transition-all duration-300">
+<div class="flex flex-col text-center py-6 space-y-4 text-xs tracking-widest uppercase text-light/90">
+<a href="#about" class="block py-2 hover:text-primary mobile-link">About</a>
+<a href="#services" class="block py-2 hover:text-primary mobile-link">Services</a>
+<a href="#gallery" class="block py-2 hover:text-primary mobile-link">Gallery</a>
+<a href="#testimonials" class="block py-2 hover:text-primary mobile-link">Testimonials</a>
+<a href="#contact" class="block py-2 text-primary font-bold mobile-link">Get a Quote</a>
+</div>
+</div>
+</header>
+
+<section id="hero" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+<div class="absolute inset-0 w-full h-full z-0">
+<img src="https://i0.wp.com/elitecaterers.in/wp-content/uploads/best-catering-service-hyderabad-elite-caterers.jpeg" alt="Elegant Feast" class="w-full h-full object-cover filter brightness-[0.3]">
+<div class="absolute inset-0 bg-gradient-to-t from-secondary via-transparent to-secondary/80"></div>
+</div>
+<div class="relative z-10 max-w-4xl mx-auto px-4 md:px-8 text-center animate-on-scroll w-full">
+<p class="text-primary font-medium uppercase tracking-[0.2em] md:tracking-[0.3em] text-[10px] md:text-xs mb-4 md:mb-6">Kerala's Trusted Caterers Since 1984</p>
+<h1 class="font-heading text-5xl sm:text-6xl md:text-8xl text-light leading-[1.1] drop-shadow-2xl mb-4">A Legacy of<br><span class="italic text-primary font-light">Taste</span> & Tradition</h1>
+<div class="diamond-divider my-6 md:my-8"><div class="diamond"></div></div>
+<p class="text-light/80 text-sm md:text-lg font-light leading-relaxed max-w-2xl mx-auto mb-8 md:mb-12 px-2">For over four decades, we've blended authentic recipes with impeccable hygiene to serve millions across Kerala, creating unforgettable culinary experiences.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+<a href="#contact" class="btn-gold bg-primary text-secondary px-8 py-3.5 w-full sm:w-auto hover:bg-transparent hover:text-primary">Request a Quote</a>
+<a href="#services" class="btn-gold bg-transparent text-primary px-8 py-3.5 w-full sm:w-auto">Our Services</a>
+</div>
+</div>
+<div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-bounce hidden md:block">
+<a href="#legacy" class="text-primary/70 hover:text-primary"><i data-lucide="chevron-down" class="w-6 h-6"></i></a>
+</div>
+</section>
+
+<section id="legacy" class="bg-secondary text-light py-12 md:py-16 border-b border-white/5">
+<div class="max-w-7xl mx-auto px-4 md:px-8">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 divide-y md:divide-y-0 md:divide-x divide-white/10 text-center">
+<div class="animate-on-scroll pt-4 md:pt-0"><p class="font-heading text-4xl md:text-5xl lg:text-6xl text-primary mb-2">40+</p><p class="text-[10px] md:text-xs uppercase tracking-widest text-light/50">Years Heritage</p></div>
+<div class="animate-on-scroll pt-4 md:pt-0" style="transition-delay: 100ms;"><p class="font-heading text-4xl md:text-5xl lg:text-6xl text-primary mb-2">10M+</p><p class="text-[10px] md:text-xs uppercase tracking-widest text-light/50">Happy Guests</p></div>
+<div class="animate-on-scroll pt-4 md:pt-0" style="transition-delay: 200ms;"><p class="font-heading text-4xl md:text-5xl lg:text-6xl text-primary mb-2">FSSAI</p><p class="text-[10px] md:text-xs uppercase tracking-widest text-light/50">Certified</p></div>
+<div class="animate-on-scroll pt-4 md:pt-0" style="transition-delay: 300ms;"><p class="font-heading text-4xl md:text-5xl lg:text-6xl text-primary mb-2">98%</p><p class="text-[10px] md:text-xs uppercase tracking-widest text-light/50">Local Sourced</p></div>
+</div>
+</div>
+</section>
+
+<section id="about" class="py-16 md:py-24 lg:py-32 bg-light text-secondary overflow-hidden">
+<div class="max-w-7xl mx-auto px-4 md:px-8 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+<div class="relative animate-on-scroll order-2 lg:order-1 mt-8 lg:mt-0">
+<div class="w-full lg:w-4/5 aspect-[4/5] lg:aspect-[3/4] overflow-hidden rounded-t-full border border-primary/20 p-2 mx-auto lg:mx-0">
+<img src="https://placehold.co/600x800/111/D4AF37?text=Master+Chef" alt="Founder preparing" class="w-full h-full object-cover rounded-t-full transition duration-1000 hover:scale-105">
+</div>
+<div class="hidden lg:block absolute bottom-[-5%] right-0 w-3/5 aspect-square overflow-hidden border-[6px] border-light shadow-2xl p-2 bg-light rounded-full">
+<div class="w-full h-full border border-primary/20 overflow-hidden rounded-full">
+<img src="https://placehold.co/600x600/D4AF37/111?text=Spices" alt="Spices" class="w-full h-full object-cover transition duration-1000 hover:scale-110">
+</div>
+</div>
+</div>
+<div class="animate-on-scroll order-1 lg:order-2 text-center lg:text-left">
+<p class="text-primary font-semibold uppercase tracking-widest text-xs mb-4">Our Legacy</p>
+<h2 class="font-heading text-4xl md:text-5xl lg:text-7xl text-secondary leading-tight mb-6">Crafting Kerala's <br><i class="text-primary font-light">Finest Feasts</i></h2>
+<div class="w-16 h-px bg-primary mb-6 mx-auto lg:mx-0"></div>
+<p class="text-secondary/80 text-sm md:text-base leading-relaxed mb-6 font-light">For over four decades, Ideal Caterers has been the cornerstone of celebrations across Kerala. Founded on a passion for authentic flavors and an unwavering commitment to quality, our journey began in a small kitchen with a grand vision: to serve not just food, but memories.</p>
+<p class="text-secondary/80 text-sm md:text-base leading-relaxed mb-8 font-light">We blend time-honored recipes passed down through generations with modern, systematic processes to ensure every dish is a masterpiece of taste, hygiene, and consistency.</p>
+<img src="https://placehold.co/200x80/FAFAFA/D4AF37?text=Signature&font=playfair" alt="Signature" class="h-10 md:h-12 opacity-80 mix-blend-multiply mx-auto lg:mx-0">
+</div>
+</div>
+</section>
+
+<section id="services" class="bg-radial-dark py-16 md:py-24 lg:py-32 relative border-y border-white/5">
+<div class="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
+<div class="text-center mb-12 md:mb-20 animate-on-scroll">
+<p class="text-primary font-semibold uppercase tracking-widest text-xs mb-4">Our Expertise</p>
+<h2 class="font-heading text-4xl md:text-5xl lg:text-6xl text-light">Services for Every Occasion</h2>
+<div class="diamond-divider"><div class="diamond"></div></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+<div class="group glass-panel hover:border-primary/50 p-8 md:p-10 transition-all duration-500 animate-on-scroll text-center relative overflow-hidden flex flex-col items-center">
+<div class="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-bl-full -mr-12 -mt-12 transition-transform group-hover:scale-150 duration-700"></div>
+<div class="w-16 h-16 rounded-full border border-primary/30 flex items-center justify-center mb-6 group-hover:bg-primary/10 transition-colors duration-500">
+<i data-lucide="gem" class="w-6 h-6 text-primary"></i>
+</div>
+<h3 class="font-heading text-2xl md:text-3xl text-light group-hover:text-primary mb-4 transition-colors">Grand Weddings</h3>
+<p class="text-light/60 font-light leading-relaxed text-xs md:text-sm">From intimate gatherings to lavish celebrations, we curate bespoke wedding menus that honor tradition and delight your guests.</p>
+</div>
+<div class="group glass-panel hover:border-primary/50 p-8 md:p-10 transition-all duration-500 animate-on-scroll text-center relative overflow-hidden flex flex-col items-center" style="transition-delay: 100ms;">
+<div class="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-bl-full -mr-12 -mt-12 transition-transform group-hover:scale-150 duration-700"></div>
+<div class="w-16 h-16 rounded-full border border-primary/30 flex items-center justify-center mb-6 group-hover:bg-primary/10 transition-colors duration-500">
+<i data-lucide="package" class="w-6 h-6 text-primary"></i>
+</div>
+<h3 class="font-heading text-2xl md:text-3xl text-light group-hover:text-primary mb-4 transition-colors">Mini Catering</h3>
+<p class="text-light/60 font-light leading-relaxed text-xs md:text-sm">Enjoy Ideal's signature taste at home or the office. Self-service mini-catering solutions bringing quality straight to your doorstep.</p>
+</div>
+<div class="group glass-panel hover:border-primary/50 p-8 md:p-10 transition-all duration-500 animate-on-scroll text-center relative overflow-hidden flex flex-col items-center" style="transition-delay: 200ms;">
+<div class="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-bl-full -mr-12 -mt-12 transition-transform group-hover:scale-150 duration-700"></div>
+<div class="w-16 h-16 rounded-full border border-primary/30 flex items-center justify-center mb-6 group-hover:bg-primary/10 transition-colors duration-500">
+<i data-lucide="building-2" class="w-6 h-6 text-primary"></i>
+</div>
+<h3 class="font-heading text-2xl md:text-3xl text-light group-hover:text-primary mb-4 transition-colors">B2B Supplies</h3>
+<p class="text-light/60 font-light leading-relaxed text-xs md:text-sm">We supply premium, ready-to-cook, and frozen food products to hotels and businesses, backed by our legacy of consistency.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="process" class="py-16 md:py-24 lg:py-32 bg-light text-secondary">
+<div class="max-w-5xl mx-auto px-4 md:px-8">
+<div class="text-center mb-16 md:mb-20 animate-on-scroll">
+<p class="text-primary font-semibold uppercase tracking-widest text-xs mb-4">Our Commitment</p>
+<h2 class="font-heading text-4xl md:text-5xl lg:text-6xl text-secondary">Hygiene-First Process</h2>
+<div class="diamond-divider"><div class="diamond"></div></div>
+</div>
+<div class="relative mt-8 md:mt-16">
+<div class="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-primary/30 md:-translate-x-1/2"></div>
+<div class="space-y-12 md:space-y-20">
+<div class="relative flex flex-col md:flex-row items-start md:items-center md:justify-between animate-on-scroll group">
+<div class="md:w-5/12 md:text-right pl-16 md:pl-0 pr-0 md:pr-12 w-full">
+<h3 class="font-heading text-2xl md:text-3xl text-secondary mb-2 group-hover:text-primary transition-colors">1. Premium Sourcing</h3>
+<p class="text-secondary/70 font-light text-sm md:text-base leading-relaxed">Partnering with trusted local farmers to select only the freshest ingredients.</p>
+</div>
+<div class="absolute left-6 md:left-1/2 top-1 md:top-1/2 flex items-center justify-center w-3 h-3 bg-primary rounded-full -translate-x-1/2 md:-translate-y-1/2 z-10 outline outline-4 outline-light"></div>
+<div class="md:w-5/12 hidden md:block"></div>
+</div>
+<div class="relative flex flex-col md:flex-row items-start md:items-center md:justify-between animate-on-scroll group">
+<div class="md:w-5/12 hidden md:block"></div>
+<div class="absolute left-6 md:left-1/2 top-1 md:top-1/2 flex items-center justify-center w-3 h-3 bg-primary rounded-full -translate-x-1/2 md:-translate-y-1/2 z-10 outline outline-4 outline-light"></div>
+<div class="md:w-5/12 pl-16 md:pl-12 w-full">
+<h3 class="font-heading text-2xl md:text-3xl text-secondary mb-2 group-hover:text-primary transition-colors">2. Strict Preparation</h3>
+<p class="text-secondary/70 font-light text-sm md:text-base leading-relaxed">State-of-the-art kitchens adhering to stringent FSSAI hygiene protocols.</p>
+</div>
+</div>
+<div class="relative flex flex-col md:flex-row items-start md:items-center md:justify-between animate-on-scroll group">
+<div class="md:w-5/12 md:text-right pl-16 md:pl-0 pr-0 md:pr-12 w-full">
+<h3 class="font-heading text-2xl md:text-3xl text-secondary mb-2 group-hover:text-primary transition-colors">3. Secure Packaging</h3>
+<p class="text-secondary/70 font-light text-sm md:text-base leading-relaxed">Food is packed in food-grade, temperature-controlled containers safely.</p>
+</div>
+<div class="absolute left-6 md:left-1/2 top-1 md:top-1/2 flex items-center justify-center w-3 h-3 bg-primary rounded-full -translate-x-1/2 md:-translate-y-1/2 z-10 outline outline-4 outline-light"></div>
+<div class="md:w-5/12 hidden md:block"></div>
+</div>
+<div class="relative flex flex-col md:flex-row items-start md:items-center md:justify-between animate-on-scroll group">
+<div class="md:w-5/12 hidden md:block"></div>
+<div class="absolute left-6 md:left-1/2 top-1 md:top-1/2 flex items-center justify-center w-3 h-3 bg-primary rounded-full -translate-x-1/2 md:-translate-y-1/2 z-10 outline outline-4 outline-light"></div>
+<div class="md:w-5/12 pl-16 md:pl-12 w-full">
+<h3 class="font-heading text-2xl md:text-3xl text-secondary mb-2 group-hover:text-primary transition-colors">4. Timely Delivery</h3>
+<p class="text-secondary/70 font-light text-sm md:text-base leading-relaxed">Dedicated logistics ensuring your order arrives on time, every time.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="gallery" class="py-16 md:py-24 lg:py-32 bg-secondary border-t border-white/5">
+<div class="max-w-7xl mx-auto px-4 md:px-8">
+<div class="text-center mb-12 md:mb-16 animate-on-scroll">
+<p class="text-primary font-semibold uppercase tracking-widest text-xs mb-4">A Visual Feast</p>
+<h2 class="font-heading text-4xl md:text-5xl lg:text-6xl text-light">Moments Catered</h2>
+<div class="diamond-divider"><div class="diamond"></div></div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+<div class="lg:col-span-2 h-64 md:h-80 lg:h-[400px] group overflow-hidden animate-on-scroll relative rounded-sm">
+<div class="absolute inset-0 border border-white/10 z-10 pointer-events-none transition-colors duration-500 group-hover:border-primary/50 m-3"></div>
+<img src="https://placehold.co/1000x600/111/D4AF37?text=Wedding+Sadhya" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 filter brightness-75 group-hover:brightness-100" alt="Wedding Sadhya">
+</div>
+<div class="h-64 md:h-80 lg:h-[400px] group overflow-hidden animate-on-scroll relative rounded-sm" style="transition-delay: 100ms;">
+<div class="absolute inset-0 border border-white/10 z-10 pointer-events-none transition-colors duration-500 group-hover:border-primary/50 m-3"></div>
+<img src="https://placehold.co/600x600/0a0a0a/D4AF37?text=Buffet" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 filter brightness-75 group-hover:brightness-100" alt="Corporate Buffet">
+</div>
+<div class="h-64 md:h-80 lg:h-[400px] group overflow-hidden animate-on-scroll relative rounded-sm" style="transition-delay: 150ms;">
+<div class="absolute inset-0 border border-white/10 z-10 pointer-events-none transition-colors duration-500 group-hover:border-primary/50 m-3"></div>
+<img src="https://placehold.co/600x600/111/FAFAFA?text=Details" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 filter brightness-75 group-hover:brightness-100" alt="Food Detail">
+</div>
+<div class="lg:col-span-2 h-64 md:h-80 lg:h-[400px] group overflow-hidden animate-on-scroll relative rounded-sm" style="transition-delay: 200ms;">
+<div class="absolute inset-0 border border-white/10 z-10 pointer-events-none transition-colors duration-500 group-hover:border-primary/50 m-3"></div>
+<img src="https://placehold.co/1000x600/0a0a0a/D4AF37?text=Modern+Kitchen" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 filter brightness-75 group-hover:brightness-100" alt="Modern Kitchen">
+</div>
+</div>
+</div>
+</section>
+
+<section id="testimonials" class="relative py-16 md:py-24 lg:py-32 text-light overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img src="https://placehold.co/1920x1080/111/D4AF37?text=Ambiance" alt="Ambiance" class="w-full h-full object-cover filter brightness-[0.15]">
+</div>
+<div class="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
+<div class="text-center mb-12 md:mb-20 animate-on-scroll">
+<p class="text-primary font-semibold uppercase tracking-widest text-xs mb-4">Appreciation</p>
+<h2 class="font-heading text-4xl md:text-5xl lg:text-6xl text-light">Client Stories</h2>
+<div class="diamond-divider"><div class="diamond"></div></div>
+</div>
+<div class="grid md:grid-cols-2 gap-8 md:gap-12">
+<div class="glass-panel p-8 md:p-12 relative animate-on-scroll text-center rounded-sm">
+<i data-lucide="quote" class="mx-auto w-10 h-10 text-primary/40 mb-6"></i>
+<div class="flex justify-center mb-6 space-x-1 text-primary"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div>
+<p class="font-heading text-xl md:text-2xl italic leading-relaxed mb-8 text-light/90">"Ideal Caterers made our wedding unforgettable. The food was authentic, delicious, and the service was impeccable. Truly professional."</p>
+<div class="w-12 h-px bg-primary mx-auto mb-6"></div>
+<p class="uppercase tracking-widest text-primary text-xs font-bold">Anjali & Sreejith</p>
+<p class="text-light/50 text-[10px] mt-2 uppercase tracking-widest">Wedding in Thrissur</p>
+</div>
+<div class="glass-panel p-8 md:p-12 relative animate-on-scroll text-center rounded-sm" style="transition-delay: 150ms;">
+<i data-lucide="quote" class="mx-auto w-10 h-10 text-primary/40 mb-6"></i>
+<div class="flex justify-center mb-6 space-x-1 text-primary"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div>
+<p class="font-heading text-xl md:text-2xl italic leading-relaxed mb-8 text-light/90">"For our annual corporate event, hygiene and quality were paramount. Ideal delivered on all fronts. The mini-catering boxes were a hit."</p>
+<div class="w-12 h-px bg-primary mx-auto mb-6"></div>
+<p class="uppercase tracking-widest text-primary text-xs font-bold">Praveen Kumar</p>
+<p class="text-light/50 text-[10px] mt-2 uppercase tracking-widest">Event Manager, TechCorp</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="contact" class="py-16 md:py-24 lg:py-32 bg-secondary border-t border-white/5">
+<div class="max-w-7xl mx-auto px-4 md:px-8 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+<div class="animate-on-scroll text-center lg:text-left">
+<p class="text-primary font-semibold uppercase tracking-widest text-xs mb-4">Get in Touch</p>
+<h2 class="font-heading text-4xl md:text-5xl lg:text-7xl text-light mb-6">Plan Your <br class="hidden lg:block"><i class="text-primary font-light">Perfect Event</i></h2>
+<div class="w-16 h-px bg-primary mb-6 mx-auto lg:mx-0"></div>
+<p class="text-light/70 font-light text-sm md:text-base leading-relaxed mb-10">Have a question or ready to book? Fill out the form, and our team will get back to you to discuss your catering needs and create a custom menu.</p>
+<div class="space-y-6 max-w-md mx-auto lg:mx-0 text-left">
+<div class="flex items-center gap-4 md:gap-6 group"><div class="w-12 h-12 flex-shrink-0 flex items-center justify-center border border-white/10 rounded-full group-hover:border-primary group-hover:bg-primary/5 transition-all"><i data-lucide="phone" class="w-4 h-4 md:w-5 md:h-5 text-primary"></i></div><span class="text-sm md:text-base font-light tracking-wide text-light/80 group-hover:text-light transition-colors">+91 987 654 3210</span></div>
+<div class="flex items-center gap-4 md:gap-6 group"><div class="w-12 h-12 flex-shrink-0 flex items-center justify-center border border-white/10 rounded-full group-hover:border-primary group-hover:bg-primary/5 transition-all"><i data-lucide="mail" class="w-4 h-4 md:w-5 md:h-5 text-primary"></i></div><span class="text-sm md:text-base font-light tracking-wide text-light/80 group-hover:text-light transition-colors">contact@idealcaterers.in</span></div>
+<div class="flex items-center gap-4 md:gap-6 group"><div class="w-12 h-12 flex-shrink-0 flex items-center justify-center border border-white/10 rounded-full group-hover:border-primary group-hover:bg-primary/5 transition-all"><i data-lucide="map-pin" class="w-4 h-4 md:w-5 md:h-5 text-primary"></i></div><span class="text-sm md:text-base font-light tracking-wide text-light/80 group-hover:text-light transition-colors">123 Catering Lane, Kochi, Kerala</span></div>
+</div>
+</div>
+<div class="glass-panel p-6 md:p-12 animate-on-scroll relative rounded-sm mt-8 lg:mt-0" style="transition-delay: 150ms;">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-50"></div>
+<h3 class="font-heading text-2xl md:text-3xl text-light mb-8 text-center">Reservation Request</h3>
+<form id="contact-form" class="space-y-6 md:space-y-8">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
+<input type="text" id="name" placeholder="Your Name" required class="input-elegant w-full pb-2 text-xs md:text-sm tracking-wide">
+<input type="email" id="email" placeholder="Your Email" required class="input-elegant w-full pb-2 text-xs md:text-sm tracking-wide">
+</div>
+<input type="text" id="event" placeholder="Event Type (e.g. Wedding)" class="input-elegant w-full pb-2 text-xs md:text-sm tracking-wide">
+<textarea id="message" rows="4" placeholder="Tell us about your event..." required class="input-elegant w-full pb-2 text-xs md:text-sm tracking-wide resize-none"></textarea>
+<button type="submit" class="w-full btn-gold bg-transparent px-8 py-4 mt-2">Send Request</button>
+</form>
+</div>
+</div>
+</section>
+
+<footer class="bg-[#030303] text-light/60 border-t border-white/10 pt-16 md:pt-20 pb-8">
+<div class="max-w-7xl mx-auto px-4 md:px-8">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-8 mb-12 md:mb-16 text-center md:text-left">
+<div class="lg:col-span-1 flex flex-col items-center md:items-start">
+<a href="#" class="text-2xl font-bold text-light font-heading tracking-wide mb-4 block">Ideal<span class="text-primary italic font-light">Caterers</span></a>
+<p class="text-xs md:text-sm font-light leading-relaxed mb-6 max-w-xs">Kerala's trusted catering service since 1984, delivering memorable culinary experiences with a focus on elegant presentation and impeccable taste.</p>
+<div class="flex space-x-4">
+<a href="#" class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center hover:border-primary hover:text-primary transition-all"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+<a href="#" class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center hover:border-primary hover:text-primary transition-all"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+<a href="#" class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center hover:border-primary hover:text-primary transition-all"><i data-lucide="youtube" class="w-4 h-4"></i></a>
+</div>
+</div>
+<div class="flex flex-col items-center md:items-start">
+<h4 class="text-light font-heading text-lg mb-4">Quick Links</h4>
+<ul class="space-y-3 text-xs md:text-sm tracking-wide">
+<li><a href="#about" class="hover:text-primary transition-colors">About Us</a></li>
+<li><a href="#services" class="hover:text-primary transition-colors">Our Services</a></li>
+<li><a href="#gallery" class="hover:text-primary transition-colors">Gallery</a></li>
+<li><a href="#testimonials" class="hover:text-primary transition-colors">Testimonials</a></li>
+</ul>
+</div>
+<div class="flex flex-col items-center md:items-start">
+<h4 class="text-light font-heading text-lg mb-4">Services</h4>
+<ul class="space-y-3 text-xs md:text-sm tracking-wide">
+<li><a href="#" class="hover:text-primary transition-colors">Wedding Catering</a></li>
+<li><a href="#" class="hover:text-primary transition-colors">Corporate Events</a></li>
+<li><a href="#" class="hover:text-primary transition-colors">Mini Deliveries</a></li>
+<li><a href="#" class="hover:text-primary transition-colors">B2B Food Supplies</a></li>
+</ul>
+</div>
+<div class="flex flex-col items-center md:items-start">
+<h4 class="text-light font-heading text-lg mb-4">Newsletter</h4>
+<p class="text-xs md:text-sm font-light mb-4 text-center md:text-left">Subscribe for seasonal menus and exclusive offers.</p>
+<form class="flex w-full max-w-xs md:max-w-none">
+<input type="email" placeholder="Email Address" class="bg-transparent border border-white/20 px-4 py-2 text-xs w-full focus:outline-none focus:border-primary text-light">
+<button type="submit" class="bg-primary text-secondary px-4 py-2 text-xs font-bold hover:bg-primary/90 transition-colors uppercase tracking-widest">Join</button>
+</form>
+</div>
+</div>
+<div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-[10px] md:text-xs tracking-widest uppercase">
+<p class="mb-4 md:mb-0">&copy; 2023 Ideal Caterers. All Rights Reserved.</p>
+<div class="flex space-x-4">
+<a href="#" class="hover:text-primary transition-colors">Privacy Policy</a>
+<a href="#" class="hover:text-primary transition-colors">Terms of Service</a>
+</div>
+</div>
+</div>
+</footer>
+
+<script>
+lucide.createIcons();
+document.addEventListener('DOMContentLoaded', () => {
+const btn = document.getElementById('menu-toggle-btn');
+const menu = document.getElementById('mobile-menu');
+const links = document.querySelectorAll('.mobile-link');
+btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+links.forEach(link => link.addEventListener('click', () => menu.classList.add('hidden')));
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+window.addEventListener('scroll', () => {
+const nav = document.getElementById('navbar');
+if(window.scrollY > 50) { nav.classList.add('bg-secondary/95', 'shadow-lg'); nav.classList.remove('bg-transparent'); } 
+else { nav.classList.remove('bg-secondary/95', 'shadow-lg'); nav.classList.add('bg-transparent'); }
+});
+});
+</script>
+</body>
+</html>
