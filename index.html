@@ -181,32 +181,74 @@ body{font-family:'Inter',sans-serif;background-color:#FFFFFF;color:#171717;overf
 </div>
 </section>
 <section id="gallery" class="py-16 md:py-24 lg:py-32 bg-white">
-<div class="max-w-7xl mx-auto px-4 md:px-8">
-<div class="text-center mb-12 md:mb-16 animate-on-scroll">
-<p class="text-primary font-semibold uppercase tracking-widest text-xs mb-4">A Visual Feast</p>
-<h2 class="font-heading text-4xl md:text-5xl lg:text-6xl text-dark">Moments Catered</h2>
-<div class="diamond-divider"><div class="diamond"></div></div>
-</div>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-<div class="lg:col-span-2 h-64 md:h-80 lg:h-[400px] group overflow-hidden animate-on-scroll relative rounded-xl shadow-md">
-<div class="absolute inset-0 bg-dark/10 group-hover:bg-transparent transition-colors z-10"></div>
-<img src="https://slfspaceserver.github.io/Ideal-Caterers/photo-7.jpeg" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" alt="Wedding Sadhya">
-</div>
-<div class="h-64 md:h-80 lg:h-[400px] group overflow-hidden animate-on-scroll relative rounded-xl shadow-md" style="transition-delay:100ms">
-<div class="absolute inset-0 bg-dark/10 group-hover:bg-transparent transition-colors z-10"></div>
-<img src="https://slfspaceserver.github.io/Ideal-Caterers/photo-8.jpeg" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" alt="Corporate Buffet">
-</div>
-<div class="h-64 md:h-80 lg:h-[400px] group overflow-hidden animate-on-scroll relative rounded-xl shadow-md" style="transition-delay:150ms">
-<div class="absolute inset-0 bg-dark/10 group-hover:bg-transparent transition-colors z-10"></div>
-<img src="https://slfspaceserver.github.io/Ideal-Caterers/photo-10.jpeg" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" alt="Food Detail">
-</div>
-<div class="lg:col-span-2 h-64 md:h-80 lg:h-[400px] group overflow-hidden animate-on-scroll relative rounded-xl shadow-md" style="transition-delay:200ms">
-<div class="absolute inset-0 bg-dark/10 group-hover:bg-transparent transition-colors z-10"></div>
-<img src="https://slfspaceserver.github.io/Ideal-Caterers/photo-11.jpeg" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" alt="Modern Kitchen">
-</div>
-</div>
-</div>
+  <div class="max-w-7xl mx-auto px-4 md:px-8">
+    
+    <!-- Heading -->
+    <div class="text-center mb-12">
+      <p class="text-primary font-semibold uppercase tracking-widest text-xs mb-4">
+        A Visual Feast
+      </p>
+      <h2 class="font-heading text-4xl md:text-5xl text-dark">
+        Moments Catered
+      </h2>
+    </div>
+
+    <!-- Slider -->
+    <div class="relative overflow-hidden rounded-xl">
+      
+      <!-- Slides Container -->
+      <div id="slider" class="flex transition-transform duration-700 ease-in-out">
+        
+        <img src="https://slfspaceserver.github.io/Ideal-Caterers/photo-7.jpeg"
+             class="w-full flex-shrink-0 object-cover h-72 md:h-[400px]" />
+
+        <img src="https://slfspaceserver.github.io/Ideal-Caterers/photo-8.jpeg"
+             class="w-full flex-shrink-0 object-cover h-72 md:h-[400px]" />
+
+        <img src="https://slfspaceserver.github.io/Ideal-Caterers/photo-10.jpeg"
+             class="w-full flex-shrink-0 object-cover h-72 md:h-[400px]" />
+
+        <img src="https://slfspaceserver.github.io/Ideal-Caterers/photo-11.jpeg"
+             class="w-full flex-shrink-0 object-cover h-72 md:h-[400px]" />
+      </div>
+
+      <!-- Buttons -->
+      <button onclick="prevSlide()" 
+              class="absolute top-1/2 left-3 -translate-y-1/2 bg-black/50 text-white px-3 py-2 rounded-full">
+        ◀
+      </button>
+
+      <button onclick="nextSlide()" 
+              class="absolute top-1/2 right-3 -translate-y-1/2 bg-black/50 text-white px-3 py-2 rounded-full">
+        ▶
+      </button>
+
+    </div>
+  </div>
 </section>
+
+<script>
+  let currentIndex = 0;
+  const slider = document.getElementById("slider");
+  const totalSlides = slider.children.length;
+
+  function updateSlide() {
+    slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+  }
+
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % totalSlides;
+    updateSlide();
+  }
+
+  function prevSlide() {
+    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+    updateSlide();
+  }
+
+  // Auto slide every 3 seconds
+  setInterval(nextSlide, 3000);
+</script>
 <section id="testimonials" class="relative py-16 md:py-24 lg:py-32 text-dark overflow-hidden">
 <div class="absolute inset-0 z-0">
 <img src="https://chefandspice.co.uk/wp-content/uploads/2025/06/outside-catering-chef-and-spice-leicester.webp" alt="Ambiance" class="w-full h-full object-cover opacity-30">
@@ -347,7 +389,7 @@ body{font-family:'Inter',sans-serif;background-color:#FFFFFF;color:#171717;overf
   var date = document.getElementById("date").value;
   var message = document.getElementById("message").value;
 
-  var phoneNumber = "919876543210"; // 👉 replace with your WhatsApp number
+  var phoneNumber = "919876543210"; 
 
   var text = 
 `Hello, I have a catering enquiry:
