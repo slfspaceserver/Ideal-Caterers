@@ -140,7 +140,43 @@ body{font-family:'Inter',sans-serif;background-color:#FFFFFF;color:#171717;overf
     </div>
 
   </div>
+<!-- ABOUT MODAL -->
+<div id="aboutModal" class="fixed inset-0 bg-black/60 z-[999] hidden items-center justify-center px-4">
 
+  <div class="bg-white max-w-3xl w-full rounded-2xl shadow-2xl p-6 md:p-10 relative animate-on-scroll overflow-y-auto max-h-[90vh]">
+
+    <!-- Close Button -->
+    <button onclick="closeAboutModal()" 
+      class="absolute top-4 right-4 text-dark hover:text-primary text-xl">
+      ✕
+    </button>
+
+    <!-- Title -->
+    <h2 class="font-heading text-3xl md:text-4xl text-dark mb-6 text-center">
+      About Us
+    </h2>
+
+    <div class="w-12 h-px bg-primary mx-auto mb-6"></div>
+
+    <!-- EXACT CONTENT -->
+    <p class="text-dark/70 text-sm md:text-base leading-relaxed mb-6 font-light">
+      Ideal Foods and Catering (Ideal Caterers) has been a benchmark for culinary excellence in Kerala since its inception in 1984. Established by A. M. Kabir, our foundation was built upon a core commitment: to deliver cuisine that respects tradition, captivates the palate, and fosters community.
+    </p>
+
+    <p class="text-dark/70 text-sm md:text-base leading-relaxed mb-6 font-light">
+      We are an integral division of the A. S. Bava Family Group, a distinguished legacy enterprise founded in 1894 at Broadway, Ernakulam, a historically significant commercial hub within Kochi.
+    </p>
+
+    <p class="text-dark/70 text-sm md:text-base leading-relaxed mb-6 font-light">
+      In 2013, we strategically diversified our operations beyond catering by introducing a line of ready-to-cook gravy pastes for commercial applications. This initiative was developed through a technical collaboration with CIFT Kochi, positioning us as one of the pioneering incubatees to successfully commercialize a product under the brand name Freedom Kitchen.
+    </p>
+
+    <p class="text-dark/70 text-sm md:text-base leading-relaxed font-light">
+      Presently, we provide efficient kitchen solutions tailored for small and medium-sized restaurants and canteens. Our ready-to-use products guarantee consistent flavor profiles and exceptional hygiene standards, thereby eliminating the necessity for specialized culinary expertise. Leveraging over 40 years of industry experience, coupled with advanced blast freezing and retort technology, we meticulously preserve natural flavors and nutritional integrity, ensuring seamless and efficient kitchen operations.
+    </p>
+
+  </div>
+</div>
 </section>
 <section id="legacy" class="bg-white py-12 md:py-16 border-b border-gray-100">
 <div class="max-w-7xl mx-auto px-4 md:px-8">
@@ -163,12 +199,39 @@ body{font-family:'Inter',sans-serif;background-color:#FFFFFF;color:#171717;overf
 </div>
 </div>
 <div class="animate-on-scroll order-1 lg:order-2 text-center lg:text-left">
-<p class="text-primary font-semibold uppercase tracking-widest text-xs mb-4">Our Legacy</p>
-<h2 class="font-heading text-4xl md:text-5xl lg:text-6xl text-dark leading-tight mb-6">Crafting Kerala's <br><i class="text-primary font-light">Finest Feasts</i></h2>
-<div class="w-16 h-px bg-primary mb-6 mx-auto lg:mx-0"></div>
-<p class="text-dark/70 text-sm md:text-base leading-relaxed mb-6 font-light">For over four decades, Ideal Caterers has been the cornerstone of celebrations across Kerala. Founded on a passion for authentic flavors and an unwavering commitment to quality, our journey began in a small kitchen with a grand vision: to serve not just food, but memories.</p>
-<p class="text-dark/70 text-sm md:text-base leading-relaxed mb-8 font-light">We blend time-honored recipes passed down through generations with modern, systematic processes to ensure every dish is a masterpiece of taste, hygiene, and consistency.</p>
-<img src="https://slfspaceserver.github.io/Ideal-Caterers/ideal-cateres-logo.png" alt="Signature" class="h-12 md:h-12 opacity-40 mx-auto lg:mx-0 filter invert">
+  <p class="text-primary font-semibold uppercase tracking-widest text-xs mb-4">About Us</p>
+
+  <h2 class="font-heading text-2xl md:text-3xl lg:text-3xl text-dark leading-tight mb-6">
+    Ideal Caterers – Established in 1984 <br>
+    <i class="text-primary font-light">Leading Wedding Caterers in Kochi</i>
+  </h2>
+
+  <div class="w-16 h-px bg-primary mb-6 mx-auto lg:mx-0"></div>
+
+  <p class="text-dark/70 text-sm md:text-base leading-relaxed mb-6 font-light">
+    Planning an event is stressful. Food shouldn’t be.
+  </p>
+
+  <p class="text-dark/70 text-sm md:text-base leading-relaxed mb-6 font-light">
+    Since 1984, Ideal Caterers has served over one million plates across Kerala, delivering reliable and high-quality catering for weddings, corporate events, and in-office meetings.
+  </p>
+
+  <p class="text-dark/70 text-sm md:text-base leading-relaxed mb-6 font-light">
+    As one of the leading wedding caterers in Kochi, we focus on smart, cost-conscious menu planning that balances tradition with efficiency. Our approach ensures the right quantity, minimal food wastage, and consistent taste while staying within your budget.
+  </p>
+
+  <p class="text-dark/70 text-sm md:text-base leading-relaxed mb-8 font-light">
+    For corporate clients, our in-office catering service removes the need to move meetings outside. We provide hygienic, well-organized food delivery directly to your workplace, helping your team stay focused and productive.
+  </p>
+
+  <!-- See More Button -->
+<div class="mb-8">
+  <button onclick="openAboutModal()" 
+    class="inline-block px-6 py-3 text-sm font-semibold text-white bg-primary rounded-full shadow-md hover:bg-primary/90 transition">
+    See More →
+  </button>
+</div>
+
 </div>
 </div>
 </section>
@@ -336,16 +399,14 @@ body{font-family:'Inter',sans-serif;background-color:#FFFFFF;color:#171717;overf
 <div class="flex justify-center mb-6 space-x-1 text-primary"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div>
 <p class="font-heading text-xl md:text-2xl italic leading-relaxed mb-8 text-dark/80">"Ideal Caterers made our wedding unforgettable. The food was authentic, delicious, and the service was impeccable. Truly professional."</p>
 <div class="w-12 h-px bg-primary mx-auto mb-6"></div>
-<p class="uppercase tracking-widest text-dark text-xs font-bold">Anjali & Sreejith</p>
-<p class="text-dark/50 text-[10px] mt-2 uppercase tracking-widest">Wedding in Thrissur</p>
+
 </div>
 <div class="glass-panel p-8 md:p-12 relative animate-on-scroll text-center rounded-2xl" style="transition-delay:150ms">
 <i data-lucide="quote" class="mx-auto w-10 h-10 text-primary/30 mb-6"></i>
 <div class="flex justify-center mb-6 space-x-1 text-primary"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div>
 <p class="font-heading text-xl md:text-2xl italic leading-relaxed mb-8 text-dark/80">"For our annual corporate event, hygiene and quality were paramount. Ideal delivered on all fronts. The mini-catering boxes were a hit."</p>
 <div class="w-12 h-px bg-primary mx-auto mb-6"></div>
-<p class="uppercase tracking-widest text-dark text-xs font-bold">Praveen Kumar</p>
-<p class="text-dark/50 text-[10px] mt-2 uppercase tracking-widest">Event Manager, TechCorp</p>
+
 </div>
 </div>
 </div>
@@ -370,46 +431,67 @@ body{font-family:'Inter',sans-serif;background-color:#FFFFFF;color:#171717;overf
 <div class="w-16 h-px bg-primary mb-6 mx-auto lg:mx-0"></div>
 <p class="text-dark/60 font-light text-sm md:text-base leading-relaxed mb-10">Have a question or ready to book? Fill out the form, and our team will get back to you to discuss your catering needs and create a custom menu.</p>
 <div class="space-y-6 max-w-md mx-auto lg:mx-0 text-left">
-<div class="flex items-center gap-4 md:gap-6 group"><div class="w-12 h-12 flex-shrink-0 flex items-center justify-center border border-gray-200 rounded-full group-hover:border-primary group-hover:bg-primary/5 transition-all"><i data-lucide="phone" class="w-5 h-5 text-primary"></i></div><a href="tel:+919846019536" class="text-sm md:text-base font-medium text-dark/80 group-hover:text-primary transition-colors">+91 98460 19536</a></div>
-<div class="flex items-center gap-4 md:gap-6 group"><div class="w-12 h-12 flex-shrink-0 flex items-center justify-center border border-gray-200 rounded-full group-hover:border-primary group-hover:bg-primary/5 transition-all"><i data-lucide="mail" class="w-5 h-5 text-primary"></i></div><a href="mailto:hk4848@gmail.com" class="text-sm md:text-base font-medium text-dark/80 group-hover:text-primary transition-colors">hello@idealcaterers.com</a></div>
-<div class="flex items-center gap-4 md:gap-6 group"><div class="w-12 h-12 flex-shrink-0 flex items-center justify-center border border-gray-200 rounded-full group-hover:border-primary group-hover:bg-primary/5 transition-all"><i data-lucide="map-pin" class="w-5 h-5 text-primary"></i></div><span class="text-sm md:text-base font-medium text-dark/80">Kochi, Kerala, India</span></div>
+<div class="flex items-start gap-4 md:gap-6 group">
+  
+  <div class="w-12 h-12 flex-shrink-0 flex items-center justify-center border border-gray-200 rounded-full group-hover:border-primary group-hover:bg-primary/5 transition-all">
+    <i data-lucide="phone" class="w-5 h-5 text-primary"></i>
+  </div>
+
+  <div class="flex flex-col">
+    <a href="tel:+919846022886" class="text-sm md:text-base font-medium text-dark/80 group-hover:text-primary transition-colors">
+      +91 98460 22886
+    </a>
+    <a href="tel:+919846019536" class="text-sm md:text-base font-medium text-dark/80 group-hover:text-primary transition-colors">
+      +91 98460 19536
+    </a>
+  </div>
+
+</div><div class="flex items-center gap-4 md:gap-6 group"><div class="w-12 h-12 flex-shrink-0 flex items-center justify-center border border-gray-200 rounded-full group-hover:border-primary group-hover:bg-primary/5 transition-all"><i data-lucide="mail" class="w-5 h-5 text-primary"></i></div><a href="mailto:hk4848@gmail.com" class="text-sm md:text-base font-medium text-dark/80 group-hover:text-primary transition-colors">hello@idealcaterers.com</a></div>
+<div class="flex items-center gap-4 md:gap-6 group"><div class="w-12 h-12 flex-shrink-0 flex items-center justify-center border border-gray-200 rounded-full group-hover:border-primary group-hover:bg-primary/5 transition-all"><i data-lucide="map-pin" class="w-5 h-5 text-primary"></i></div><span class="text-sm md:text-base font-medium text-dark/80">Ideal Foods and Catering (66/4367 AMK Towers, Padma Junction, MG Road, Kochi Kerala 682035 )</span></div>
 </div>
 </div>
 <div class="animate-on-scroll bg-surface p-8 md:p-12 rounded-2xl shadow-lg border border-gray-100">
   
-<form class="space-y-6" onsubmit="sendWhatsApp(event)">
-  
-  <div>
-    <input type="text" id="name" placeholder="Your Name" class="input-elegant bg-transparent" required>
-  </div>
+  <!-- Title -->
+  <h2 class="font-heading text-3xl md:text-3xl text-dark mb-6 text-center">
+    Request for a <span class="text-primary italic font-light">Quote</span>
+  </h3>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+  <div class="w-12 h-px bg-primary mx-auto mb-8"></div>
+
+  <form class="space-y-6" onsubmit="sendWhatsApp(event)">
+    
     <div>
-      <input type="email" id="email" placeholder="Email Address" class="input-elegant bg-transparent" required>
+      <input type="text" id="name" placeholder="Your Name" class="input-elegant bg-transparent" required>
     </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div>
+        <input type="email" id="email" placeholder="Email Address" class="input-elegant bg-transparent" required>
+      </div>
+      <div>
+        <input type="tel" id="phone" placeholder="Phone Number" class="input-elegant bg-transparent" required>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div>
+        <input type="text" id="event" placeholder="Event Type" class="input-elegant bg-transparent">
+      </div>
+      <div>
+        <input type="date" id="date" class="input-elegant bg-transparent text-dark/50">
+      </div>
+    </div>
+
     <div>
-      <input type="tel" id="phone" placeholder="Phone Number" class="input-elegant bg-transparent" required>
+      <textarea id="message" placeholder="Tell us about your event..." rows="4" class="input-elegant bg-transparent resize-none"></textarea>
     </div>
-  </div>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-    <div>
-      <input type="text" id="event" placeholder="Event Type" class="input-elegant bg-transparent">
-    </div>
-    <div>
-      <input type="date" id="date" class="input-elegant bg-transparent text-dark/50">
-    </div>
-  </div>
+    <button type="submit" class="btn-gold bg-primary text-white w-full py-4 mt-4 rounded-sm hover:bg-transparent hover:text-primary">
+      Send via WhatsApp
+    </button>
 
-  <div>
-    <textarea id="message" placeholder="Tell us about your event..." rows="4" class="input-elegant bg-transparent resize-none"></textarea>
-  </div>
-
-  <button type="submit" class="btn-gold bg-primary text-white w-full py-4 mt-4 rounded-sm hover:bg-transparent hover:text-primary">
-    Send via WhatsApp
-  </button>
-
-</form>
+  </form>
 </div>
 </div>
 </section>
@@ -493,6 +575,17 @@ Details: ${message}`;
   btn.addEventListener("click", () => {
     menu.classList.toggle("hidden");
   });
+</script>
+<script>
+function openAboutModal() {
+  document.getElementById("aboutModal").classList.remove("hidden");
+  document.getElementById("aboutModal").classList.add("flex");
+}
+
+function closeAboutModal() {
+  document.getElementById("aboutModal").classList.add("hidden");
+  document.getElementById("aboutModal").classList.remove("flex");
+}
 </script>
 <script>
 lucide.createIcons();
