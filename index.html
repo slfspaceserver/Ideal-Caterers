@@ -8,6 +8,9 @@
 <meta name="keywords" content="catering service Kochi, best caterers Kerala, wedding catering Kochi, event catering Kerala, food catering Kochi, Ideal Caterers">
 <meta name="author" content="Ideal Caterers">
 <script src="https://cdn.tailwindcss.com"></script>
+<link rel="icon" href="https://theidealcaterers.com/logo-ideal-caterers.png" type="image/png">
+<link rel="shortcut icon" href="https://theidealcaterers.com/logo-ideal-caterers.png">
+<link rel="apple-touch-icon" href="https://theidealcaterers.com/logo-ideal-caterers.png">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 <script>
@@ -31,6 +34,12 @@ body{font-family:'Inter',sans-serif;background-color:#FFFFFF;color:#171717;overf
 .btn-gold:hover{color:#FFFFFF}
 .glass-panel{background:rgba(255,255,255,0.85);backdrop-filter:blur(12px);border:1px solid rgba(0,0,0,0.05);box-shadow:0 10px 30px -10px rgba(0,0,0,0.05)}
 </style>
+<style>
+@keyframes fadeIn {
+  from {opacity:0; transform:scale(0.95);}
+  to {opacity:1; transform:scale(1);}
+}
+</style>
 </head>
 <body class="antialiased selection:bg-primary selection:text-white">
 <header class="fixed w-full top-0 z-50 glass-panel transition-all duration-300" id="navbar">
@@ -49,7 +58,7 @@ body{font-family:'Inter',sans-serif;background-color:#FFFFFF;color:#171717;overf
       <a href="#about" class="hover:text-primary transition-colors">About</a>
       <a href="#services" class="hover:text-primary transition-colors">Services</a>
       <a href="#gallery" class="hover:text-primary transition-colors">Gallery</a>
-      <a href="#testimonials" class="hover:text-primary transition-colors">Testimonials</a>
+      <a href="#services" class="hover:text-primary transition-colors">Expertise</a>
 
       <!-- ✅ Added -->
       <a href="privacy-policy.html" class="hover:text-primary transition-colors">Privacy</a>
@@ -73,14 +82,11 @@ body{font-family:'Inter',sans-serif;background-color:#FFFFFF;color:#171717;overf
     
     <div class="flex flex-col text-center py-6 space-y-4 text-xs tracking-widest uppercase text-dark/80 font-medium">
       
-      <a href="#about" class="block py-2 hover:text-primary">About</a>
-      <a href="#services" class="block py-2 hover:text-primary">Services</a>
-      <a href="#gallery" class="block py-2 hover:text-primary">Gallery</a>
-      <a href="#testimonials" class="block py-2 hover:text-primary">Testimonials</a>
-    
-      <a href="privacy-policy/index.html" class="block py-2 hover:text-primary">Privacy Policy</a>
-      <a href="terms-conditions/index.html" class="block py-2 hover:text-primary">Terms & Conditions</a>
-      <a href="#contact" class="block py-2 text-primary font-bold">Get a Quote</a>
+<a href="#about" class="mobile-link block py-2 hover:text-primary">About</a>
+<a href="#services" class="mobile-link block py-2 hover:text-primary">Services</a>
+<a href="#gallery" class="mobile-link block py-2 hover:text-primary">Gallery</a>
+<a href="#services" class="mobile-link block py-2 hover:text-primary">Expertise</a>
+<a href="#contact" class="mobile-link block py-2 text-primary font-bold">Get a Quote</a>
 
     </div>
 
@@ -132,7 +138,7 @@ body{font-family:'Inter',sans-serif;background-color:#FFFFFF;color:#171717;overf
           Request a Quote
         </a>
 
-        <a href="#services" class="btn-gold bg-transparent text-primary px-8 py-3.5 text-center rounded-sm">
+        <a href="#services" class="btn-gold bg-primary text-white px-8 py-3.5 text-center rounded-sm hover:bg-transparent hover:text-primary">
           Our Services
         </a>
       </div>
@@ -143,7 +149,7 @@ body{font-family:'Inter',sans-serif;background-color:#FFFFFF;color:#171717;overf
 <!-- ABOUT MODAL -->
 <div id="aboutModal" class="fixed inset-0 bg-black/60 z-[999] hidden items-center justify-center px-4">
 
-  <div class="bg-white max-w-3xl w-full rounded-2xl shadow-2xl p-6 md:p-10 relative animate-on-scroll overflow-y-auto max-h-[90vh]">
+  <div class="bg-white max-w-3xl w-full rounded-2xl shadow-2xl p-6 md:p-10 relative overflow-y-auto max-h-[90vh]">
 
     <!-- Close Button -->
     <button onclick="closeAboutModal()" 
@@ -158,22 +164,26 @@ body{font-family:'Inter',sans-serif;background-color:#FFFFFF;color:#171717;overf
 
     <div class="w-12 h-px bg-primary mx-auto mb-6"></div>
 
-    <!-- EXACT CONTENT -->
-    <p class="text-dark/70 text-sm md:text-base leading-relaxed mb-6 font-light">
-      Ideal Foods and Catering (Ideal Caterers) has been a benchmark for culinary excellence in Kerala since its inception in 1984. Established by A. M. Kabir, our foundation was built upon a core commitment: to deliver cuisine that respects tradition, captivates the palate, and fosters community.
-    </p>
+    <!-- TEXT CONTENT (FIXED ALIGNMENT) -->
+    <div class="text-left md:text-justify text-dark/70 text-sm md:text-base leading-relaxed md:leading-loose font-light space-y-6">
 
-    <p class="text-dark/70 text-sm md:text-base leading-relaxed mb-6 font-light">
-      We are an integral division of the A. S. Bava Family Group, a distinguished legacy enterprise founded in 1894 at Broadway, Ernakulam, a historically significant commercial hub within Kochi.
-    </p>
+      <p>
+        Ideal Foods and Catering (Ideal Caterers) has been a benchmark for culinary excellence in Kerala since its inception in 1984. Established by A. M. Kabir, our foundation was built upon a core commitment: to deliver cuisine that respects tradition, captivates the palate, and fosters community.
+      </p>
 
-    <p class="text-dark/70 text-sm md:text-base leading-relaxed mb-6 font-light">
-      In 2013, we strategically diversified our operations beyond catering by introducing a line of ready-to-cook gravy pastes for commercial applications. This initiative was developed through a technical collaboration with CIFT Kochi, positioning us as one of the pioneering incubatees to successfully commercialize a product under the brand name Freedom Kitchen.
-    </p>
+      <p>
+        We are an integral division of the A. S. Bava Family Group, a distinguished legacy enterprise founded in 1894 at Broadway, Ernakulam, a historically significant commercial hub within Kochi.
+      </p>
 
-    <p class="text-dark/70 text-sm md:text-base leading-relaxed font-light">
-      Presently, we provide efficient kitchen solutions tailored for small and medium-sized restaurants and canteens. Our ready-to-use products guarantee consistent flavor profiles and exceptional hygiene standards, thereby eliminating the necessity for specialized culinary expertise. Leveraging over 40 years of industry experience, coupled with advanced blast freezing and retort technology, we meticulously preserve natural flavors and nutritional integrity, ensuring seamless and efficient kitchen operations.
-    </p>
+      <p>
+        In 2013, we strategically diversified our operations beyond catering by introducing a line of ready-to-cook gravy pastes for commercial applications. This initiative was developed through a technical collaboration with CIFT Kochi, positioning us as one of the pioneering incubatees to successfully commercialize a product under the brand name Freedom Kitchen.
+      </p>
+
+      <p>
+        Presently, we provide efficient kitchen solutions tailored for small and medium-sized restaurants and canteens. Our ready-to-use products guarantee consistent flavor profiles and exceptional hygiene standards, thereby eliminating the necessity for specialized culinary expertise. Leveraging over 40 years of industry experience, coupled with advanced blast freezing and retort technology, we meticulously preserve natural flavors and nutritional integrity, ensuring seamless and efficient kitchen operations.
+      </p>
+
+    </div>
 
   </div>
 </div>
@@ -198,16 +208,20 @@ body{font-family:'Inter',sans-serif;background-color:#FFFFFF;color:#171717;overf
 <img src="https://slfspaceserver.github.io/Ideal-Caterers/photo-3.jpeg" alt="Spices" class="w-full h-full object-cover rounded-full transition duration-1000 hover:scale-110">
 </div>
 </div>
-<div class="animate-on-scroll order-1 lg:order-2 text-center lg:text-left">
-  <p class="text-primary font-semibold uppercase tracking-widest text-xs mb-4">About Us</p>
+<div class="animate-on-scroll order-1 lg:order-2 text-left">
+
+  <p class="text-primary font-semibold uppercase tracking-widest text-xs mb-4">
+    About Us
+  </p>
 
   <h2 class="font-heading text-2xl md:text-3xl lg:text-3xl text-dark leading-tight mb-6">
     Ideal Caterers – Established in 1984 <br>
     <i class="text-primary font-light">Leading Wedding Caterers in Kochi</i>
   </h2>
 
-  <div class="w-16 h-px bg-primary mb-6 mx-auto lg:mx-0"></div>
+  <div class="w-16 h-px bg-primary mb-6"></div>
 
+  <!-- CONTENT -->
   <p class="text-dark/70 text-sm md:text-base leading-relaxed mb-6 font-light">
     Planning an event is stressful. Food shouldn’t be.
   </p>
@@ -222,15 +236,13 @@ body{font-family:'Inter',sans-serif;background-color:#FFFFFF;color:#171717;overf
 
   <p class="text-dark/70 text-sm md:text-base leading-relaxed mb-8 font-light">
     For corporate clients, our in-office catering service removes the need to move meetings outside. We provide hygienic, well-organized food delivery directly to your workplace, helping your team stay focused and productive.
+    
+    <!-- SEE MORE INLINE -->
+    <span onclick="openAboutModal()" 
+      class="text-primary font-medium cursor-pointer hover:underline ml-1">
+      See more...
+    </span>
   </p>
-
-  <!-- See More Button -->
-<div class="mb-8">
-  <button onclick="openAboutModal()" 
-    class="inline-block px-6 py-3 text-sm font-semibold text-white bg-primary rounded-full shadow-md hover:bg-primary/90 transition">
-    See More →
-  </button>
-</div>
 
 </div>
 </div>
@@ -446,8 +458,8 @@ body{font-family:'Inter',sans-serif;background-color:#FFFFFF;color:#171717;overf
     </a>
   </div>
 
-</div><div class="flex items-center gap-4 md:gap-6 group"><div class="w-12 h-12 flex-shrink-0 flex items-center justify-center border border-gray-200 rounded-full group-hover:border-primary group-hover:bg-primary/5 transition-all"><i data-lucide="mail" class="w-5 h-5 text-primary"></i></div><a href="mailto:hk4848@gmail.com" class="text-sm md:text-base font-medium text-dark/80 group-hover:text-primary transition-colors">hello@idealcaterers.com</a></div>
-<div class="flex items-center gap-4 md:gap-6 group"><div class="w-12 h-12 flex-shrink-0 flex items-center justify-center border border-gray-200 rounded-full group-hover:border-primary group-hover:bg-primary/5 transition-all"><i data-lucide="map-pin" class="w-5 h-5 text-primary"></i></div><span class="text-sm md:text-base font-medium text-dark/80">Ideal Foods and Catering (66/4367 AMK Towers, Padma Junction, MG Road, Kochi Kerala 682035 )</span></div>
+</div><div class="flex items-center gap-4 md:gap-6 group"><div class="w-12 h-12 flex-shrink-0 flex items-center justify-center border border-gray-200 rounded-full group-hover:border-primary group-hover:bg-primary/5 transition-all"><i data-lucide="mail" class="w-5 h-5 text-primary"></i></div><a href="mailto:hk4848@gmail.com" class="text-sm md:text-base font-medium text-dark/80 group-hover:text-primary transition-colors">hello@theidealcaterers.com</a></div>
+<div class="flex items-center gap-4 md:gap-6 group"><div class="w-12 h-12 flex-shrink-0 flex items-center justify-center border border-gray-200 rounded-full group-hover:border-primary group-hover:bg-primary/5 transition-all"><i data-lucide="map-pin" class="w-5 h-5 text-primary"></i></div><span class="text-sm md:text-base font-medium text-dark/80">Ideal Foods and Catering <br> (66/4367 AMK Towers, Padma Junction, MG Road, Kochi Kerala 682035 )</span></div>
 </div>
 </div>
 <div class="animate-on-scroll bg-surface p-8 md:p-12 rounded-2xl shadow-lg border border-gray-100">
@@ -476,7 +488,7 @@ body{font-family:'Inter',sans-serif;background-color:#FFFFFF;color:#171717;overf
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       <div>
-        <input type="text" id="event" placeholder="Event Type" class="input-elegant bg-transparent">
+        <input type="text" id="event" placeholder="Number of People" class="input-elegant bg-transparent">
       </div>
       <div>
         <input type="date" id="date" class="input-elegant bg-transparent text-dark/50">
@@ -501,11 +513,95 @@ body{font-family:'Inter',sans-serif;background-color:#FFFFFF;color:#171717;overf
   <!-- Brand -->
   <div class="md:col-span-2">
     <img src="https://slfspaceserver.github.io/Ideal-Caterers/logo-ideal.png" class="h-12 mb-6 opacity-90">
+    
     <p class="text-white/60 font-light text-sm leading-relaxed max-w-sm mb-6">
       Crafting Kerala's finest feasts since 1984. Blending tradition, taste, and impeccable hygiene.
     </p>
+
+    <!-- ✅ Social Media -->
+<div class="flex items-center gap-4 mt-4">
+
+  <!-- Facebook -->
+  <a href="https://www.facebook.com/theidealcaterers" target="_blank"
+     class="w-10 h-10 flex items-center justify-center border border-white/20 rounded-full hover:bg-primary hover:border-primary transition">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+      <path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-3h2.5V9.5c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.3.2 2.3.2v2.5h-1.3c-1.3 0-1.7.8-1.7 1.6V12H17l-.4 3h-2.3v7A10 10 0 0 0 22 12z"/>
+    </svg>
+  </a>
+
+  <!-- Instagram -->
+  <a href="https://www.instagram.com/" target="_blank"
+     class="w-10 h-10 flex items-center justify-center border border-white/20 rounded-full hover:bg-primary hover:border-primary transition">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+      <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm5 5.2A4.8 4.8 0 1 1 7.2 12 4.8 4.8 0 0 1 12 7.2zm6.3-1.6a1.2 1.2 0 1 1-1.2 1.2 1.2 1.2 0 0 1 1.2-1.2zM12 9a3 3 0 1 0 3 3 3 3 0 0 0-3-3z"/>
+    </svg>
+  </a>
+
+  <!-- LinkedIn -->
+  <a href="https://www.linkedin.com/company/idealcaterers/" target="_blank"
+     class="w-10 h-10 flex items-center justify-center border border-white/20 rounded-full hover:bg-primary hover:border-primary transition">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+      <path d="M4.98 3.5C4.98 4.88 3.86 6 2.48 6S0 4.88 0 3.5 1.12 1 2.48 1 4.98 2.12 4.98 3.5zM.5 8h4v13h-4V8zm7.5 0h3.6v1.8h.1c.5-.9 1.8-1.8 3.7-1.8 4 0 4.7 2.6 4.7 6V21h-4v-6c0-1.4 0-3.2-2-3.2s-2.3 1.5-2.3 3v6.2h-4V8z"/>
+    </svg>
+  </a>
+
+</div>
+
+  </div>
+<!-- WhatsApp Button -->
+<button onclick="openWhatsAppPopup()" 
+  class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition">
+
+  <!-- Correct WhatsApp Icon -->
+  <svg xmlns="http://www.w3.org/2000/svg" 
+       viewBox="0 0 32 32" 
+       class="w-7 h-7 text-white fill-current">
+       
+    <path d="M16.003 2.002c-7.732 0-14 6.268-14 14 0 2.466.648 4.877 1.882 7.002L2 30l7.18-1.863A13.938 13.938 0 0016.003 30c7.732 0 14-6.268 14-14s-6.268-14-14-14zm0 25.5c-2.148 0-4.248-.575-6.082-1.663l-.435-.258-4.26 1.105 1.14-4.158-.283-.428A11.46 11.46 0 014.502 16c0-6.351 5.15-11.5 11.5-11.5s11.5 5.149 11.5 11.5-5.149 11.502-11.5 11.502zm6.326-8.645c-.346-.173-2.046-1.01-2.363-1.126-.317-.116-.548-.173-.779.173-.23.346-.894 1.126-1.096 1.356-.202.23-.404.259-.75.086-.346-.173-1.46-.538-2.782-1.714-1.028-.917-1.722-2.049-1.924-2.395-.202-.346-.022-.533.151-.706.156-.155.346-.404.519-.606.173-.202.23-.346.346-.577.115-.23.058-.433-.029-.606-.086-.173-.779-1.876-1.067-2.568-.28-.673-.564-.582-.779-.593l-.664-.012c-.23 0-.606.086-.923.433-.317.346-1.212 1.183-1.212 2.885s1.241 3.347 1.414 3.578c.173.23 2.444 3.732 5.922 5.232.827.357 1.471.57 1.974.73.829.264 1.584.227 2.18.138.665-.099 2.046-.835 2.335-1.642.288-.808.288-1.5.202-1.642-.086-.144-.317-.23-.663-.404z"/>
+  </svg>
+
+</button>
+
+<!-- WhatsApp Popup -->
+<div id="waPopup" class="fixed inset-0 bg-black/50 z-[999] hidden items-center justify-center px-4">
+
+  <div class="bg-white max-w-md w-full rounded-2xl p-6 relative shadow-xl">
+
+    <!-- Close -->
+    <button onclick="closeWhatsAppPopup()" 
+      class="absolute top-3 right-4 text-dark text-xl hover:text-primary">
+      ✕
+    </button>
+
+    <h2 class="text-xl font-semibold mb-6 text-dark">Quick Enquiry</h2>
+
+    <div class="space-y-5">
+
+      <!-- Date -->
+      <div>
+        <label class="text-sm text-dark/70 block mb-1">Event Date</label>
+        <input id="waDate" type="date"
+          class="w-full border-b border-gray-300 p-2 outline-none text-dark focus:border-primary">
+      </div>
+
+      <!-- People -->
+      <div>
+        <label class="text-sm text-dark/70 block mb-1">Number of People</label>
+        <input id="waPeople" type="number" placeholder="Enter number"
+          class="w-full border-b border-gray-300 p-2 outline-none text-dark placeholder-gray-400 focus:border-primary">
+      </div>
+
+      <!-- Button -->
+      <button onclick="sendWhatsApp()" 
+        class="w-full bg-primary text-white py-3 rounded mt-4 hover:opacity-90 transition">
+        Send via WhatsApp
+      </button>
+
+    </div>
+
   </div>
 
+</div>
   <!-- Quick Links -->
   <div>
     <h4 class="font-heading text-xl mb-6 text-primary">Quick Links</h4>
@@ -517,7 +613,7 @@ body{font-family:'Inter',sans-serif;background-color:#FFFFFF;color:#171717;overf
     </ul>
   </div>
 
-  <!-- ✅ Legal -->
+  <!-- Legal -->
   <div>
     <h4 class="font-heading text-xl mb-6 text-primary">Legal</h4>
     <ul class="space-y-3 text-sm font-light text-white/70">
@@ -535,9 +631,10 @@ body{font-family:'Inter',sans-serif;background-color:#FFFFFF;color:#171717;overf
   </div>
 
 </div>
+
 <div class="max-w-7xl mx-auto px-4 md:px-8 pt-8 border-t border-white/10 text-center flex flex-col md:flex-row justify-between items-center gap-4">
-<p class="text-white/40 text-xs font-light">&copy; 2026 Ideal Caterers. All rights reserved.</p>
-<p class="text-white/40 text-xs font-light">FSSAI Certified &bull; 100% Quality Assured</p>
+  <p class="text-white/40 text-xs font-light">&copy; 2026 Ideal Caterers. All rights reserved.</p>
+  <p class="text-white/40 text-xs font-light">FSSAI Certified • 100% Quality Assured</p>
 </div>
 </footer>
 <script>
@@ -551,7 +648,7 @@ body{font-family:'Inter',sans-serif;background-color:#FFFFFF;color:#171717;overf
   var date = document.getElementById("date").value;
   var message = document.getElementById("message").value;
 
-  var phoneNumber = "919876543210"; // 👉 replace with your WhatsApp number
+  var phoneNumber = "919846022886"; // 👉 replace with your WhatsApp number
 
   var text = 
 `Hello, I have a catering enquiry:
@@ -568,6 +665,7 @@ Details: ${message}`;
   window.open(url, "_blank");
 }
 </script>
+
 <script>
   const btn = document.getElementById("menu-btn");
   const menu = document.getElementById("mobile-menu");
@@ -585,6 +683,33 @@ function openAboutModal() {
 function closeAboutModal() {
   document.getElementById("aboutModal").classList.add("hidden");
   document.getElementById("aboutModal").classList.remove("flex");
+}
+</script>
+<script>
+function openWhatsAppPopup() {
+  document.getElementById("waPopup").classList.remove("hidden");
+  document.getElementById("waPopup").classList.add("flex");
+}
+
+function closeWhatsAppPopup() {
+  document.getElementById("waPopup").classList.add("hidden");
+  document.getElementById("waPopup").classList.remove("flex");
+}
+
+function sendWhatsApp() {
+
+  const date = document.getElementById("waDate").value;
+  const people = document.getElementById("waPeople").value;
+
+  const message = `Hi, I’m interested in your catering services.
+My event is on ${date} for ${people} number of people.`;
+
+  const phone = "919846022886"; 
+
+  const url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
+
+  window.open(url, "_blank");
+
 }
 </script>
 <script>
