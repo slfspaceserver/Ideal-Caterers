@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page Not Found | Ideal Caterers</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Inter&display=swap" rel="stylesheet">
+
+<script>
+tailwind.config={theme:{extend:{colors:{primary:'#C59B27',dark:'#171717',surface:'#F9FAFB'}}}}
+</script>
+
+<style>
+body{font-family:'Inter',sans-serif}
+.glass-panel{background:rgba(255,255,255,0.85);backdrop-filter:blur(12px)}
+</style>
+</head>
+
+<body class="bg-surface text-dark">
+
+<!-- HEADER (same style) -->
+<header class="fixed w-full top-0 z-50 glass-panel">
+  <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+    <a href="/">
+      <img src="https://slfspaceserver.github.io/Ideal-Caterers/logo-ideal.png" class="h-10">
+    </a>
+  </div>
+</header>
+
+<!-- 404 SECTION -->
+<section class="min-h-screen flex items-center justify-center text-center px-4 pt-24">
+
+  <div>
+
+    <h1 class="font-heading text-7xl md:text-9xl text-primary mb-4">
+      404
+    </h1>
+
+    <h2 class="text-2xl md:text-3xl font-semibold mb-4">
+      Page Not Found
+    </h2>
+
+    <p class="text-dark/60 max-w-md mx-auto mb-8">
+      The page you're looking for doesn’t exist or may have been moved.
+    </p>
+
+    <!-- Buttons -->
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+
+      <a href="https://www.theidealcaterers.com" 
+         class="bg-primary text-white px-8 py-3 rounded-sm">
+        Go to Home
+      </a>
+
+      <a href="https://www.theidealcaterers.com#contact" 
+         class="border border-primary text-primary px-8 py-3 rounded-sm">
+        Contact Us
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+<script>
+  // optional: redirect after 5 seconds
+  setTimeout(() => {
+    window.location.href = "/";
+  }, 5000);
+</script>
+</body>
+</html>
